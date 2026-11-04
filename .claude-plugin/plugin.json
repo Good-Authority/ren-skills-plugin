@@ -7,5 +7,8 @@
     "name": "Ren",
     "email": "support@tryren.com"
   },
-  "homepage": "https://tryren.com"
+  "homepage": "https://tryren.com",
+  "license": "MIT",
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://tryren.com/privacy"
 }
