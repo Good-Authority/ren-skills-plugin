@@ -1,0 +1,11 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "ren-skills",
+  "version": "1.0.0",
+  "description": "Ready-made playbooks for working with the Ren coaching assistant over MCP: cold start, daily brief, 1:1 prep, Dial-aware feedback, weekly team pulse, and transcript upload.",
+  "author": {
+    "name": "Ren",
+    "email": "support@tryren.com"
+  },
+  "homepage": "https://tryren.com"
+}

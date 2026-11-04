@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ren": {
+      "type": "http",
+      "url": "https://mcp.tryren.com/mcp"
+    }
+  }
+}

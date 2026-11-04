@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ren-skills-marketplace",
+  "description": "Official plugin marketplace for Ren's MCP skills.",
+  "owner": {
+    "name": "Ren",
+    "email": "support@tryren.com"
+  },
+  "plugins": [
+    {
+      "name": "ren-skills",
+      "source": "./",
+      "description": "Ready-made playbooks for working with the Ren coaching assistant over MCP."
+    }
+  ]
+}
