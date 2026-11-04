@@ -1,14 +1,10 @@
+<img src="assets/banner.svg" alt="REN — $ /plugin install ren-skills" width="100%" />
+
 # Ren skills
 
-Claude Code plugin bundling Ren's MCP skills — ready-made playbooks for cold
-start, daily brief, 1:1 prep, Dial-aware feedback, weekly team pulse, and
-transcript upload — plus the Ren MCP server connection, in one install.
-
-These skills mirror the ones published in the Ren app's Connectors sidebar
-("Ren skills" modal). The source of truth for their content is
-[`packages/storage/src/migrations/1792700000004-SeedInitialLLMSkills.ts`](https://github.com/Good-Authority/satori-nextjs/blob/develop/packages/storage/src/migrations/1792700000004-SeedInitialLLMSkills.ts)
-in the main `satori-nextjs` repo — update both places together when a skill
-changes.
+Six ready-made playbooks for working with [Ren](https://tryren.com) — your
+AI coaching assistant — straight from Claude Code. One install gets you all
+six skills plus the Ren MCP server connection, no per-file downloads.
 
 ## Install
 
@@ -17,18 +13,42 @@ changes.
 /plugin install ren-skills
 ```
 
-This installs all six skills and connects the Ren MCP server
-(`https://mcp.tryren.com/mcp`) in one step.
+That's it — Claude Code now has all six skills below, and is connected to
+Ren's MCP server.
 
-## Updating this repo when a skill changes
+## What's inside
 
-1. Edit the skill's content in the admin app (or the seed migration for the
-   original six) in `satori-nextjs`.
-2. Mirror the same change into the matching `skills/<name>/SKILL.md` file
-   here.
-3. Bump `version` in `.claude-plugin/plugin.json`.
-4. Tag the release: `claude plugin tag .` from the repo root.
+| Skill | What it does |
+|---|---|
+| `getting-started-cold-start` | Walks a brand-new workspace through inviting a team and reaching the first real brief. |
+| `daily-brief` | Pulls today's brief from Ren and relays it, with the right follow-up tool for each item. |
+| `one-on-one-prep-and-close-out` | Preps a 1:1 with calendar, Slack, Granola and Linear context, then logs the outcome back. |
+| `dial-aware-feedback` | Turns a situation into a draft on Ren's Accountability Dial — never sent without your explicit OK. |
+| `weekly-team-pulse` | A one-page view of team health: Plan/1:1 completion, nudges, and what's moving on the Dial. |
+| `transcript-to-ren-context` | Sends a meeting transcript to Ren so coaching reflects the real conversation. |
 
-Not covered by this plugin: ChatGPT and Cursor users, who still use the
-per-skill markdown downloads in the Ren app — Claude Code plugins aren't a
-format those tools read.
+## Example
+
+```
+$ /plugin install ren-skills
+✔ Installed ren-skills — 6 skills, 1 MCP server connected
+
+> /ren-skills:daily-brief
+Pulling today's brief from Ren...
+
+Ren: Sam's 1:1 recap is in — worth a look before your sync at 2pm.
+Ren: Priya hasn't logged a Plan update in 9 days.
+Ren: Ready to draft a check-in for Priya?
+```
+
+## For ChatGPT or Cursor
+
+Claude Code plugins aren't a format those tools read. Grab what you need
+straight from this repo instead — open any `skills/<name>/SKILL.md` file and
+copy its contents, or use GitHub's "Download ZIP" button on this repo for
+all six at once.
+
+## Contributing
+
+Skills are plain markdown. Open a PR against a `skills/<name>/SKILL.md` file
+to propose a change — once merged to `main`, it's live.
