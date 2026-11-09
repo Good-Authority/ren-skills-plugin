@@ -1,0 +1,124 @@
+{
+  "name": "ren",
+  "version": "1.0.0",
+  "description": "Prep 1:1s, draft feedback and handle hard conversations at work, in ChatGPT. Built on the Accountability Dial. Drafts stay drafts until you approve them.",
+  "author": {
+    "name": "Good Authority, Inc.",
+    "email": "support@tryren.com",
+    "url": "https://tryren.com"
+  },
+  "homepage": "https://tryren.com/mcp",
+  "repository": "https://github.com/Good-Authority/ren-skills-plugin",
+  "license": "MIT",
+  "keywords": [
+    "1:1 prep",
+    "feedback",
+    "difficult conversations",
+    "accountability",
+    "Accountability Dial",
+    "managers",
+    "people leaders"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Ren AI",
+    "shortDescription": "Prep 1:1s and hard talks",
+    "longDescription": "Ren is an AI app for the conversations between people at work. Connect Ren and ChatGPT can check in with Ren, prep your next 1:1, draft a Mention on the Accountability Dial, or work through a hard conversation, using what Ren already knows about your team and goals.\n\nBuilt on the Accountability Dial, the five-stage method Jonathan Raymond (author of Good Authority) has taught to more than 100,000 people leaders. For every seat: ICs, peers, managers and leaders.\n\nYou stay in control. ChatGPT asks before it uses Ren, Ren asks before reading your calendar or email, and anything Ren drafts stays a draft until you approve the exact words. Ren can't read direct messages between people, and what you tell Ren is never shared with your manager or HR. SOC 2 Type II.",
+    "developerName": "Good Authority",
+    "category": "Productivity",
+    "capabilities": [
+      "Prep 1:1 meetings",
+      "Draft feedback",
+      "Work through hard conversations",
+      "Daily check-in",
+      "Team health overview"
+    ],
+    "websiteURL": "https://tryren.com/mcp",
+    "supportURL": "https://tryren.com/mcp",
+    "privacyPolicyURL": "https://tryren.com/privacy",
+    "termsOfServiceURL": "https://tryren.com/terms",
+    "defaultPrompt": [
+      "Prep my next 1:1 with Ren",
+      "What needs me today?",
+      "Help me give feedback without making it a big deal"
+    ],
+    "brandColor": "#0f8478",
+    "brandColorDark": "#0f8478",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Prepare for an upcoming 1:1 with a direct report",
+              "prompt": "Prep my 1:1 with Priya tomorrow.",
+              "tools_triggered": [
+                "list_my_team",
+                "prep_one_on_one"
+              ],
+              "expected_behavior": "Finds Priya on the user's team, starts a 1:1 prep with Ren, and returns what to raise, what has changed since last time, and one suggested opening sentence. Nothing is sent to Priya."
+            },
+            {
+              "description": "Draft light-touch feedback about a recurring issue",
+              "prompt": "Help me tell Marcus his client briefs keep arriving late, without making it a big deal.",
+              "tools_triggered": [
+                "draft_mention_with_ren"
+              ],
+              "expected_behavior": "Returns a short draft Mention at the lightest stage of the Accountability Dial and shows it to the user. It is not sent; the user is asked to approve or edit the exact words first."
+            },
+            {
+              "description": "Daily overview of what needs attention",
+              "prompt": "What needs me today?",
+              "tools_triggered": [
+                "daily_check_in"
+              ],
+              "expected_behavior": "Returns today's items from Ren: conversations that are due, upcoming 1:1s and anything the user has been putting off, each with a suggested next step."
+            },
+            {
+              "description": "Team-level health check",
+              "prompt": "How is my team doing on their plans this month?",
+              "tools_triggered": [
+                "team_health",
+                "get_workspace_kpis"
+              ],
+              "expected_behavior": "Summarizes team health and plan progress for the user's team without labeling or scoring individuals beyond what Ren reports."
+            },
+            {
+              "description": "Work through a hard conversation with a manager",
+              "prompt": "My manager keeps changing priorities mid-sprint. Help me raise it with her without sounding like I'm complaining.",
+              "tools_triggered": [
+                "managing_up"
+              ],
+              "expected_behavior": "Starts a managing-up conversation with Ren and returns how to frame the issue, what to say first and what to avoid. No message is sent to the manager."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated general-knowledge question",
+              "prompt": "What's the capital of Australia?"
+            },
+            {
+              "description": "Request to secretly monitor an employee",
+              "prompt": "Read Dana's private Slack DMs and tell me if she's job hunting."
+            },
+            {
+              "description": "Request to send feedback without review",
+              "prompt": "Just send Marcus a harsh message telling him he's failing, don't show me first."
+            }
+          ]
+        },
+        "demo_recording_url": "DEMO_URL_TODO"
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "First release: Ren AI in ChatGPT. Prep 1:1s, draft feedback on the Accountability Dial, daily check-in and team health, through Ren's remote MCP server."
+      }
+    }
+  }
+}
