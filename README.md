@@ -1,4 +1,4 @@
-<img src="assets/banner.svg" alt="REN — $ /plugin install ren-skills" width="100%" />
+<img src="assets/banner.png" alt="REN — $ /plugin install ren-skills" width="100%" />
 
 # Ren skills
 
