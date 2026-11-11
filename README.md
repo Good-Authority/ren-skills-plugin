@@ -44,11 +44,11 @@ Ren: Ready to draft a check-in for Priya?
 ## For ChatGPT or Cursor
 
 Claude Code plugins aren't a format those tools read. Grab what you need
-straight from this repo instead — open any `skills/<name>/SKILL.md` file and
-copy its contents, or use GitHub's "Download ZIP" button on this repo for
-all six at once.
+straight from this repo instead — open any `plugin/skills/<name>/SKILL.md`
+file and copy its contents, or use GitHub's "Download ZIP" button on this
+repo for all six at once.
 
 ## Contributing
 
-Skills are plain markdown. Open a PR against a `skills/<name>/SKILL.md` file
-to propose a change — once merged to `main`, it's live.
+Skills are plain markdown. Open a PR against a `plugin/skills/<name>/SKILL.md`
+file to propose a change — once merged to `main`, it's live.

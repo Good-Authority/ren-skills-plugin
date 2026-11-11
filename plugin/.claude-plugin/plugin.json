@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "ren-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Become the best manager version of yourself — Ren's coaching playbooks, right in your AI assistant.",
   "author": {
     "name": "Ren",

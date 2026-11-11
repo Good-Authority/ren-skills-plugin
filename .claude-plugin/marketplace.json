@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "ren-skills",
-      "source": "./",
+      "source": "./plugin",
       "description": "Become the best manager version of yourself — Ren's coaching playbooks, right in your AI assistant."
     }
   ]
